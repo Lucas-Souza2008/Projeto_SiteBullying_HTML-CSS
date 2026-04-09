@@ -86,15 +86,23 @@ section.show {
     transform: none !important;
 }
 
+
 #inicio::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.2), #000);
+    z-index: 1;
+}
+
+#inicio h1,
+#inicio p {
+    position: relative;
+    z-index: 2;
+    color: #fff;
 }
 
 /* TEXTO */
-#inicio h1,
 #inicio p {
     position: relative;
     z-index: 2;
@@ -102,7 +110,7 @@ section.show {
 }
 
 #inicio h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     letter-spacing: 2px;
 }
 
@@ -141,7 +149,7 @@ section.show {
 /* CARD PADRÃO */
 .card {
     width: 280px;
-    background: #111;
+    background: #ffffff00;
     border-radius: 14px;
     padding: 20px;
     text-align: center;
@@ -407,8 +415,58 @@ li::before {
     box-shadow: 0 0 30px red;
 }
 
+/* ===== CORREÇÕES MOBILE ===== */
 @media (max-width: 768px) {
+
+    /* remove bug do fundo */
     #inicio {
         background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
     }
+
+    /* ajusta o menu */
+    nav {
+        font-size: 14px;
+        padding: 15px 10px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    /* corrige o título gigante */
+    #inicio h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        padding: 0 10px;
+    }
+
+    #inicio p {
+        font-size: 0.9rem;
+        padding: 0 20px;
+    }
+
+    /* evita cortes laterais */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* melhora seções */
+    section {
+        padding: 100px 15px;
+    }
+
+    /* cards mais fluidos */
+    .card,
+    .acao {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* vídeo responsivo */
+    .videoBox iframe {
+        height: 200px;
+    }
+
 }
