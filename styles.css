@@ -16,11 +16,12 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0);
     backdrop-filter: blur(15px);
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     z-index: 1000;
+    font-size: 20px;
 }
 
 nav a {
@@ -53,7 +54,7 @@ nav a:hover::after {
 /* SEÇÕES */
 section {
     padding: 120px 20px;
-    min-height: 100vh;
+    min-height: 40vh;
 
     display: flex;
     flex-direction: column;
@@ -97,6 +98,7 @@ section.show {
 #inicio p {
     position: relative;
     z-index: 2;
+    font-size: 20px;
 }
 
 #inicio h1 {
@@ -111,18 +113,190 @@ section.show {
 
 #leis {
     background: linear-gradient(to bottom, #050505, #0a0a0a);
+    min-height: 80vh;
+}
+
+#leis {
+    background: linear-gradient(to bottom, #050505, #0a0a0a);
+    min-height: 80vh;
+}
+
+/* TEXTO DA SEÇÃO LEIS */
+#leis > p {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
+    line-height: 1.7;
+    opacity: 0.75;
+}
+
+/* CARDS LEIS */
+.widgetLei {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* CARD PADRÃO */
+.card {
+    width: 280px;
+    background: #111;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* IMAGEM */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 #direitos {
-    background: linear-gradient(to bottom, #0a0a0a, #111111);
+    background: linear-gradient(to bottom, #0a0a0a, #111);
+    padding: 120px 20px;
 }
 
+/* texto inicial */
+#direitos .intro {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    opacity: 0.75;
+    line-height: 1.7;
+}
+
+/* container dos cards */
+.widgetDireitos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* cards */
+.widgetDireitos .card {
+    width: 280px;
+    background: #111;
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.8s;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* título */
+.widgetDireitos .card h3 {
+    margin-bottom: 10px;
+}
+
+/* texto */
+.widgetDireitos .card p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* CONSEQUÊNCIAS */
 #consequencias {
     background: linear-gradient(to bottom, #111111, #1a1a1a);
 }
 
+/* texto inicial */
+#consequencias .intro {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    opacity: 0.75;
+}
+
+/* layout lado a lado */
+.conteudoConsequencias {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* vídeo */
+.videoBox {
+    width: 500px;
+    max-width: 100%;
+}
+
+.videoBox iframe {
+    width: 100%;
+    height: 280px;
+    border-radius: 12px;
+    border: none;
+}
+
+/* texto */
+.textoBox {
+    max-width: 400px;
+    text-align: left;
+}
+
+.textoBox h3 {
+    margin-bottom: 10px;
+}
+
+.textoBox p {
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
 #ajuda {
-    background: linear-gradient(to bottom, #1a1a1a, #222222);
+    background: linear-gradient(to bottom, #1a1a1a, #222);
+}
+
+/* texto topo */
+#ajuda .intro {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    opacity: 0.75;
+    line-height: 1.7;
+}
+
+/* grid */
+.acoes {
+    display: flex;
+    gap: 25px; /* igual aos outros */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* cards */
+.acao {
+  width: 280px;
+    background: #111;
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.8s;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* hover PADRÃO GLOBAL */
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.08);
+    background: #1a1a1a;
+}
+
+/* título */
+.acao h3 {
+    margin-bottom: 10px;
+}
+
+/* texto */
+.acao p {
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
 
 /* TÍTULOS */
@@ -161,24 +335,20 @@ section p {
 
 /* CARD BASE */
 .card {
-    width: 220px;
-    padding: 20px;
-    border-radius: 12px;
-    cursor: pointer;
+    width: 320px;
+    background: #111;
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
     transition: 0.4s;
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* PALETA SUAVE NOS CARDS */
-.card:nth-child(1) { background: #0f0f0f; }
-.card:nth-child(2) { background: #151515; }
-.card:nth-child(3) { background: #1b1b1b; }
-.card:nth-child(4) { background: #222222; }
-
 /* HOVER */
 .card:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 0 25px rgba(255,255,255,0.08);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.08);
+    background: #1a1a1a;
 }
 
 /* TEXTO ESCONDIDO */
@@ -189,21 +359,16 @@ section p {
     font-size: 0.9rem;
 }
 
-/* MOSTRAR NO HOVER */
-.card:hover .info {
-    opacity: 1;
-    max-height: 100px;
-    margin-top: 10px;
-}
 
 /* CLIQUE */
 .card.active {
-    transform: scale(1.05);
+    transform: translate();
 }
 
 .card.active .info {
     opacity: 1;
-    max-height: 200px;
+    max-height: 350px;
+    margin-top: 10px;
 }
 
 /* LISTA */
