@@ -406,3 +406,9 @@ li::before {
     color: white;
     box-shadow: 0 0 30px red;
 }
+
+@media (max-width: 768px) {
+    #inicio {
+        background-attachment: scroll;
+    }
+}
